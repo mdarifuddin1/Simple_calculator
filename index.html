@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <form>
+        <label >1st number:</label>
+        <input type="number" id="firstNumber">
+        <br>
+        <label for="secondNumber">2nd number:</label>
+        <input type="number" id="secondNumber" >
+        <br>
+        <label >Choose an operation:</label>
+        <select id="operation">
+            <option value="addition">Addition</option>
+            <option value="subtraction">Subtraction</option>
+            <option value="multiplication">Multiplication</option>
+            <option value="division">Division</option>
+        </select>
+        <br>
+        <label>Result:</label>
+        <input type="number" id="result">
+        <br>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+
+    <script>
+        function calculate() {
+            const firstNumber = parseFloat(document.getElementById("firstNumber").value);
+            const secondNumber = parseFloat(document.getElementById("secondNumber").value);
+            const operation = document.getElementById("operation").value;
+            let result;
+
+            switch (operation) {
+                case "addition":
+                    result = firstNumber + secondNumber;
+                    break;
+                case "subtraction":
+                    result = firstNumber - secondNumber;
+                    break;
+                case "multiplication":
+                    result = firstNumber * secondNumber;
+                    break;
+                case "division":
+                    result = firstNumber / secondNumber;
+                    break;
+                default:
+                    result = "Invalid operation";
+                    break;
+            }
+
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>
